@@ -3,7 +3,7 @@ using System.Globalization;
 using System;
 using Client;
 
-using (var reader = new StreamReader("imdb_top_2000_movies.csv"))
+using (var reader = new StreamReader("2m Sales Records.csv"))
 
 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
 {
