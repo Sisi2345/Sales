@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CsvHelper;
+using System.Globalization;
+using System;
+using Client;
 
-namespace Client
-{
+using (var reader = new StreamReader("imdb_top_2000_movies.csv"))
 
-using (var reader = new StreamReader("2m Sales Records.csv"))
 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
 {
     csv.Context.RegisterClassMap<ModelClassMap>();
-    var records = csv.GetRecord<Model>().ToList();
+    var records = csv.GetRecords<Model>().ToList();
 }
 
-
-}
 
